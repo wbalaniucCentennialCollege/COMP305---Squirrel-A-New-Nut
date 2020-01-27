@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6886393878171374584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e715ea371f114f4a8d2584ad476634d, type: 3}
+  m_Name: Shoulder_Data
+  m_EditorClassIdentifier: 
+  m_PivotPoint: {x: 381, y: 743.5}
+  m_Vertices:
+  - {x: 408, y: 775}
+  - {x: 413, y: 717}
+  - {x: 413, y: 772}
+  - {x: 400, y: 712}
+  - {x: 361, y: 712}
+  - {x: 355, y: 775}
+  - {x: 349, y: 762}
+  - {x: 349, y: 725}
+  m_BoneWeights: []
+  m_Edges:
+  - index1: 7
+    index2: 6
+  - index1: 5
+    index2: 6
+  - index1: 7
+    index2: 4
+  - index1: 0
+    index2: 5
+  - index1: 2
+    index2: 0
+  - index1: 3
+    index2: 4
+  - index1: 1
+    index2: 3
+  - index1: 2
+    index2: 1
+  m_Holes: []
+  m_Indices: 070000000600000004000000050000000400000006000000000000000400000005000000030000000400000000000000010000000300000000000000020000000100000000000000
+  m_BindPoses: []
+  m_Blendshapes: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,9 +58,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ApiVersion: 4
   m_Sprite: {fileID: 21300002, guid: 87efaf20c96bd46b2a6e7bf4d4d3fd57, type: 3}
-  m_SharedMesh: {fileID: 2755468840731066831}
+  m_SharedMesh: {fileID: 4863800588446826952}
   m_SharedMaterials: []
---- !u!43 &2755468840731066831
+--- !u!43 &4863800588446826952
 Mesh:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,47 +223,3 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!114 &5482430104378686080
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e715ea371f114f4a8d2584ad476634d, type: 3}
-  m_Name: Shoulder_Data
-  m_EditorClassIdentifier: 
-  m_PivotPoint: {x: 381, y: 743.5}
-  m_Vertices:
-  - {x: 408, y: 775}
-  - {x: 413, y: 717}
-  - {x: 413, y: 772}
-  - {x: 400, y: 712}
-  - {x: 361, y: 712}
-  - {x: 355, y: 775}
-  - {x: 349, y: 762}
-  - {x: 349, y: 725}
-  m_BoneWeights: []
-  m_Edges:
-  - index1: 7
-    index2: 6
-  - index1: 5
-    index2: 6
-  - index1: 7
-    index2: 4
-  - index1: 0
-    index2: 5
-  - index1: 2
-    index2: 0
-  - index1: 3
-    index2: 4
-  - index1: 1
-    index2: 3
-  - index1: 2
-    index2: 1
-  m_Holes: []
-  m_Indices: 070000000600000004000000050000000400000006000000000000000400000005000000030000000400000000000000010000000300000000000000020000000100000000000000
-  m_BindPoses: []
-  m_Blendshapes: []
