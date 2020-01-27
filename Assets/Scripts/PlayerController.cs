@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rBody;
     private Animator anim;
     private bool isFacingRight = true;
+    private bool isCrouching = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,17 @@ public class PlayerController : MonoBehaviour
 
         rBody.velocity = new Vector2(horiz * speed, rBody.velocity.y);
 
+
+        // Check if sprite is crouching
+        if(isGrounded && rBody.velocity.x == 0 && Input.GetAxis("Vertical") < 0)
+        {
+            isCrouching = true;
+        }
+        else
+        {
+            isCrouching = false;
+        }
+
         // Check if sprite needs to be flipped
         if(isFacingRight && rBody.velocity.x < 0)
         {
@@ -55,6 +67,7 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("xSpeed", Mathf.Abs(rBody.velocity.x));
         anim.SetFloat("ySpeed", rBody.velocity.y);
         anim.SetBool("isGrounded", isGrounded);
+        anim.SetBool("isCrouching", isCrouching);
     }
 
     private bool GroundCheck()
