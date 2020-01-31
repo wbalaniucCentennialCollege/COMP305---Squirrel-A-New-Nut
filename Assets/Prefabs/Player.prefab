@@ -183,10 +183,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jumpForce: 750
-  groundPos: {fileID: 0}
+  groundCheckPos: {fileID: 4955551232088604880}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 0
+  groundCheckRadius: 0.15
 --- !u!1 &4163436474758891627
 GameObject:
   m_ObjectHideFlags: 0
