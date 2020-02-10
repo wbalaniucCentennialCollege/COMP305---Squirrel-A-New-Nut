@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
-    private int numberOfItems;
-    private int numberOfItemsCollected = 0;
+    private int itemsCollectedQty = 0, totalItemsQty = 0;
 
-    public int NumberOfItems { get => numberOfItems; set => numberOfItems = value; }
-    public int NumberOfItemsCollected { get => numberOfItemsCollected; set => numberOfItemsCollected = value; }
+    public int ItemsCollectedQty 
+    { 
+        get => itemsCollectedQty; 
+        set => itemsCollectedQty = value; 
+    }
+    public int TotalItemsQty 
+    { 
+        get => totalItemsQty; 
+        set => totalItemsQty = value; 
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
-        numberOfItems = GameObject.FindGameObjectsWithTag("Item").Length;
+        totalItemsQty = GameObject.FindGameObjectsWithTag("Item").Length;
+        // Debug.Log(totalItemsQty);
     }
 
-    public void ItemCollected()
+    private void Update()
     {
-        numberOfItemsCollected++;
+        Debug.Log(itemsCollectedQty);
     }
 }
