@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1348031679725556899}
   - component: {fileID: 1348031679725556902}
   - component: {fileID: 1348031679725556901}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -134,10 +134,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348031679725556920}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.09199047, y: -0.028691769}
@@ -197,7 +197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4955551232088604880}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GroundCheckPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

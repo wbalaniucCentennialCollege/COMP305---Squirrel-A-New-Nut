@@ -7,6 +7,10 @@ public class EnemyMovementController : MonoBehaviour
     [Header("Enemy Movement Info")]
     public List<Transform> waypoints;
     public int nextWaypoint = 1;
+    public Transform eyes;
+    public LayerMask playerLayer;
+
+    [HideInInspector] public Transform chaseTarget;
 
     private Animator animator;
     private Rigidbody2D rBody;
