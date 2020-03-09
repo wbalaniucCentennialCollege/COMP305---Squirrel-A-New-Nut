@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class EnemyStateController : MonoBehaviour
 {
-    [Header("Enemy Stats")]
-    public EnemyStats stats;
-
     [Header("State Information")]
     // Current state
     public State currentState;
@@ -15,9 +12,12 @@ public class EnemyStateController : MonoBehaviour
 
     // [Header("Movement Information")]
 
+    [HideInInspector] public EnemyMovementController enemyMovementController;
+
     // Start is called before the first frame update
     void Start()
     {
+        enemyMovementController = GetComponent<EnemyMovementController>();
         currentState.InitState(this);
     }
 
