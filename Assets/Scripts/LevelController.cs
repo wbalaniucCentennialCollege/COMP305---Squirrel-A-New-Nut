@@ -27,6 +27,6 @@ public class LevelController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(itemsCollectedQty);
+        // Debug.Log(itemsCollectedQty);
     }
 }

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "AI/Decisions/PatrolToChase")]
-public class PatrolToChaseDecision : Decision
+[CreateAssetMenu(menuName = "AI/Decisions/Attack")]
+public class ChaseToAttackDecision : Decision
 {
     public override bool Decide(EnemyStateController controller)
     {
@@ -14,15 +14,15 @@ public class PatrolToChaseDecision : Decision
         // 3. Size of the raycast
         // 4. The object to collide with (Physics layer = Player)
         RaycastHit2D hit = Physics2D.Raycast(
-            controller.enemyMovementController.eyes.position, 
-            controller.enemyMovementController.eyes.TransformDirection(-Vector3.right), 
-            5.0f, 
+            controller.enemyMovementController.eyes.position,
+            controller.enemyMovementController.eyes.TransformDirection(-Vector3.right),
+            1.0f,
             controller.enemyMovementController.playerLayer);
 
         Debug.DrawRay(
             controller.enemyMovementController.eyes.position,
-            controller.enemyMovementController.eyes.TransformDirection(-Vector3.right) * 5.0f,
-            Color.red);
+            controller.enemyMovementController.eyes.TransformDirection(-Vector3.right) * 1.0f,
+            Color.blue);
 
         // Check if enemy can see the player
         if (hit && hit.collider.CompareTag("Player"))

@@ -14,7 +14,7 @@ public class EnemyMovementController : MonoBehaviour
 
     private Animator animator;
     private Rigidbody2D rBody;
-    private bool isRight = true;
+    private bool isRight = false;
     private Vector2 forwardVector;
 
     // Start is called before the first frame update
