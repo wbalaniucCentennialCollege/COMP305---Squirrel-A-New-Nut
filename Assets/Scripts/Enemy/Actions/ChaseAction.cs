@@ -10,7 +10,7 @@ public class ChaseAction : Action
 
     public override void Act(EnemyStateController controller)
     {
-        Debug.Log("CHASE STATE");
+        // Debug.Log("CHASE STATE");
         // Chase the player
         Vector2 chaseVector = Vector2.MoveTowards(
             controller.transform.position,

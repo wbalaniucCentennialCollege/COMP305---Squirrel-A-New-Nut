@@ -11,7 +11,7 @@ public class AttackAction : Action
     }
     public override void Act(EnemyStateController controller)
     {
-        Debug.Log("ROAR. I'm attacking you now");
+        // Debug.Log("ROAR. I'm attacking you now");
     }
 
 

@@ -15,7 +15,7 @@ public class PatrolAction : Action
 
     public override void Act(EnemyStateController controller)
     {
-        Debug.Log("Patrol State");
+        // Debug.Log("Patrol State");
         int nextWaypoint = controller.enemyMovementController.nextWaypoint;
         // Call the Move function and provide a target
         controller.enemyMovementController.Move(controller.enemyMovementController.waypoints[nextWaypoint].position, speed);
