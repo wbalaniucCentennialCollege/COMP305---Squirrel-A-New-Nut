@@ -29,46 +29,57 @@ public class PlayerController : MonoBehaviour
     // Physics
     void FixedUpdate()
     {
-        Vector2 movement = Vector2.zero;
-        float horiz = Input.GetAxis("Horizontal");
-
-        isGrounded = GroundCheck();
-
-        // Jumping code will go here!
-        if(isGrounded && Input.GetAxis("Jump") > 0)
+        if (!LevelController.Instance.IsLevelEnd)
         {
-            rBody.AddForce(new Vector2(0.0f, jumpForce));
-            isGrounded = false;
-        }
+            Vector2 movement = Vector2.zero;
+            float horiz = Input.GetAxis("Horizontal");
 
-        rBody.velocity = new Vector2(horiz * speed, rBody.velocity.y);
+            isGrounded = GroundCheck();
+
+            // Jumping code will go here!
+            if (isGrounded && Input.GetAxis("Jump") > 0)
+            {
+                rBody.AddForce(new Vector2(0.0f, jumpForce));
+                isGrounded = false;
+            }
+
+            rBody.velocity = new Vector2(horiz * speed, rBody.velocity.y);
 
 
-        // Check if sprite is crouching
-        if(isGrounded && rBody.velocity.x == 0 && Input.GetAxis("Vertical") < 0)
-        {
-            isCrouching = true;
+            // Check if sprite is crouching
+            if (isGrounded && rBody.velocity.x == 0 && Input.GetAxis("Vertical") < 0)
+            {
+                isCrouching = true;
+            }
+            else
+            {
+                isCrouching = false;
+            }
+
+            // Check if sprite needs to be flipped
+            if (isFacingRight && rBody.velocity.x < 0)
+            {
+                Flip();
+            }
+            else if (!isFacingRight && rBody.velocity.x > 0)
+            {
+                Flip();
+            }
+
+
+            anim.SetFloat("xSpeed", Mathf.Abs(rBody.velocity.x));
+            anim.SetFloat("ySpeed", rBody.velocity.y);
+            anim.SetBool("isGrounded", isGrounded);
+            anim.SetBool("isCrouching", isCrouching);
         }
         else
         {
-            isCrouching = false;
+            rBody.velocity = Vector2.zero;
+            anim.SetFloat("xSpeed", 0);
+            anim.SetFloat("ySpeed", 0);
+            anim.SetBool("isGrounded", true);
+            anim.SetBool("isCrouching", false);
         }
-
-        // Check if sprite needs to be flipped
-        if(isFacingRight && rBody.velocity.x < 0)
-        {
-            Flip();
-        }
-        else if (!isFacingRight && rBody.velocity.x > 0)
-        {
-            Flip();
-        }
-
-
-        anim.SetFloat("xSpeed", Mathf.Abs(rBody.velocity.x));
-        anim.SetFloat("ySpeed", rBody.velocity.y);
-        anim.SetBool("isGrounded", isGrounded);
-        anim.SetBool("isCrouching", isCrouching);
     }
 
     private bool GroundCheck()

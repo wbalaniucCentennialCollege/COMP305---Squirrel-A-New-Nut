@@ -11,7 +11,7 @@ public class GemController : MonoBehaviour
 
     private void Start()
     {
-        levelController = GameObject.FindWithTag("LevelController").GetComponent<LevelController>();
+        levelController = LevelController.Instance;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -23,7 +23,7 @@ public class GemController : MonoBehaviour
             GameObject.Instantiate(itemFeedback, this.transform.position, this.transform.rotation);
 
             // Increase player item pickup counter
-            levelController.ItemsCollectedQty++;
+            levelController.PickedUpItem();
 
             // Destroy this object
             Destroy(this.gameObject);

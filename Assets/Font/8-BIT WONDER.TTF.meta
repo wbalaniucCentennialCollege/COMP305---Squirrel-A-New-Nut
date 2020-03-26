@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 585188cdc4600544eb408bee749e4b3a
+guid: 1e222c6066febc446a9cf795bf6741d7
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 160
-  forceTextureCase: -2
+  fontSize: 140
+  forceTextureCase: -1
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: ThaleahFat
+  fontName: 8BIT WONDER
   fontNames:
-  - ThaleahFat
+  - 8BIT WONDER
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

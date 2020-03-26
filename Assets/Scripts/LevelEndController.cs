@@ -6,14 +6,13 @@ using UnityEngine.UI;
 public class LevelEndController : MonoBehaviour
 {
     public Text itemCollectedText;
-    public GameObject playerLevelEnd;
     public Cinemachine.CinemachineVirtualCamera cam;
 
     private LevelController levelController;
 
     void Start()
     {
-        levelController = GameObject.FindWithTag("LevelController").GetComponent<LevelController>();
+        levelController = LevelController.Instance;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -25,8 +24,7 @@ public class LevelEndController : MonoBehaviour
 
             cam.Follow = this.transform;
 
-            GameObject.Instantiate(playerLevelEnd, other.transform.position, other.transform.rotation);
-            Destroy(other.gameObject);
+            levelController.CheckLevelEnd();
         }
     }
 }
