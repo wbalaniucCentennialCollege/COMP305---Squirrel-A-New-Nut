@@ -10,6 +10,7 @@ public class LevelController : MonoBehaviour
     public static LevelController Instance {  get { return _instance; } }
 
     [SerializeField] private Text uiText;
+    [SerializeField] private GameObject levelEndPanelUI;
 
     private int itemsCollectedQty = 0, totalItemsQty = 0;
     private bool _isLevelEnd = false;
@@ -53,6 +54,7 @@ public class LevelController : MonoBehaviour
         if(itemsCollectedQty == totalItemsQty)
         {
             _isLevelEnd = true;
+            levelEndPanelUI.SetActive(true);
         }
     }
 }
